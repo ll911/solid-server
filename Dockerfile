@@ -13,7 +13,7 @@ WORKDIR /opt/app/
 
 EXPOSE 8443
 USER 1000
-RUN npm i -g solid-server \
+RUN npm i \
  && mv config.json-default config.json \
  && openssl req \
     -new \
@@ -25,4 +25,4 @@ RUN npm i -g solid-server \
     -keyout privkey.pem \
     -out fullchain.pem
 
-CMD ["solid", "start"]
+CMD ["npm", "run", "solid", "start"]
