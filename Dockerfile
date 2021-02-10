@@ -11,9 +11,9 @@ RUN apk update \
 
 WORKDIR /opt/app/
 
-EXPOSE 8080 8443
+EXPOSE 8443
 USER 1000
-RUN npm install \
+RUN npm i -g solid-server \
  && mv config.json-default config.json \
  && openssl req \
     -new \
@@ -25,4 +25,4 @@ RUN npm install \
     -keyout privkey.pem \
     -out fullchain.pem
 
-CMD ["npm", "run", "solid", "start"]
+CMD ["solid", "start"]
