@@ -1,4 +1,4 @@
-FROM node:lts-alpine3.12
+FROM node:lts-alpine3.17
 
 RUN apk update \
  && apk --no-cache add git openssh-client openssl wget \
